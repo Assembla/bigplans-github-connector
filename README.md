@@ -4,4 +4,4 @@
 
 ### Synopsys
 
-This is the GitHub connector for BigPlans.io.
+This is the GitHub connector for [BigPlans.io](https://bigplans.io).
