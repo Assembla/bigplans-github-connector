@@ -1,0 +1,37 @@
+{
+  "name": "bigplans-github-connector",
+  "version": "0.0.0",
+  "description": "The GitHub connector for BigPlans.io",
+  "main": "index.js",
+  "private": true,
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Assembla/bigplans-github-connector.git"
+  },
+  "keywords": [
+    "bigplans",
+    "connector",
+    "github"
+  ],
+  "author": "Assembla Inc.",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Assembla/bigplans-github-connector/issues"
+  },
+  "homepage": "https://github.com/Assembla/bigplans-github-connector",
+  "dependencies": {
+  },
+  "devDependencies": {
+    "grunt": "0.4.2",
+    "jshint": "2.4.4",
+    "grunt-cli": "0.1.13",
+    "grunt-contrib-jshint": "0.8.0",
+    "grunt-jasmine-node": "0.1.0",
+    "load-grunt-config": "0.7.1",
+    "sinon": "1.8.2",
+    "jasmine-sinon": "0.3.1"
+  }
+}
