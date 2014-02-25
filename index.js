@@ -1,4 +1,3 @@
 'use strict';
 
-module.exports = {
-};
+module.exports.getProjects = require('./lib/handlers/getProjects');
