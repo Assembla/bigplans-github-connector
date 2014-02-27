@@ -23,6 +23,8 @@
   },
   "homepage": "https://github.com/Assembla/bigplans-github-connector",
   "dependencies": {
+    "q": "1.0.0",
+    "github": "0.1.14"
   },
   "devDependencies": {
     "grunt": "0.4.2",
