@@ -4,10 +4,11 @@ var GitHubSession = require('../lib/githubSession.js');
 
 
 describe('GitHubSession: wrapper for the node-github module', function() {
-  var github, token, username;
+  var github, token, username, organisation;
 
   beforeEach(function() {
     username = 'test-bpc';
+    organisation = 'test-bpc-org';
     token = '08e4314357fa1ce5ca492d02ddd2649b5b1af452';
     github = new GitHubSession(token);
   });
@@ -53,10 +54,9 @@ describe('GitHubSession: wrapper for the node-github module', function() {
 
 
   describe('.getOrganisationRepos', function() {
-    var organisation, expectedRepos;
+    var expectedRepos;
 
     beforeEach(function() {
-      organisation = 'test-bpc-org';
       expectedRepos = [{
         name: organisation + '/org-repo1',
         urlName: 'org-repo1'
@@ -70,6 +70,18 @@ describe('GitHubSession: wrapper for the node-github module', function() {
       github.getOrganisationRepos(organisation)
       .then(function(repos) {
         expect(repos).toEqual(expectedRepos);
+        done();
+      })
+      .catch(errorHandler.bind(this, done));
+    });
+  });
+
+
+  describe('.getOrganisationUsers', function() {
+    it('returns the list of members’ usernames', function(done) {
+      github.getOrganisationUsers(organisation)
+      .then(function(users) {
+        expect(users).toEqual(['test-bpc']);
         done();
       })
       .catch(errorHandler.bind(this, done));
