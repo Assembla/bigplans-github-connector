@@ -52,6 +52,31 @@ describe('GitHubSession: wrapper for the node-github module', function() {
   });
 
 
+  describe('.getOrganisationRepos', function() {
+    var organisation, expectedRepos;
+
+    beforeEach(function() {
+      organisation = 'test-bpc-org';
+      expectedRepos = [{
+        name: organisation + '/org-repo1',
+        urlName: 'org-repo1'
+      }, {
+        name: organisation + '/org-repo2',
+        urlName: 'org-repo2'
+      }];
+    });
+
+    it('returns a list of repos for a given organisation', function(done) {
+      github.getOrganisationRepos(organisation)
+      .then(function(repos) {
+        expect(repos).toEqual(expectedRepos);
+        done();
+      })
+      .catch(errorHandler.bind(this, done));
+    });
+  });
+
+
   function errorHandler(done, err) {
     expect(err.message).toBe('');
     done(false);
