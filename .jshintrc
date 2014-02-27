@@ -1,6 +1,5 @@
 {
   "bitwise": true,
-  "camelcase": true,
   "eqeqeq": true,
   "immed": true,
   "indent": 2,
@@ -28,9 +27,11 @@
     "setTimeout": false,
 
     "jasmine": false,
-    "describe": false,
     "beforeEach": false,
+    "describe": false,
+    "xdescribe": false,
     "it": false,
+    "xit": false,
     "expect": false,
     "spyOn": false
   }
