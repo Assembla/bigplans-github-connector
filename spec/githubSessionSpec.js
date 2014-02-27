@@ -35,11 +35,26 @@ describe('GitHubSession: wrapper for the node-github module', function() {
         expect(repos).toEqual(expectedRepos);
         done();
       })
-      .catch(function errorHandler(err) {
-        expect(err.message).toBe('');
-        done(false);
-      });
+      .catch(errorHandler.bind(this, done));
     });
   });
+
+
+  describe('.getOrganisations', function() {
+    it('returns a list of the organisations that the user is member of', function(done) {
+      github.getOrganisations()
+      .then(function(organisations) {
+        expect(organisations).toEqual(['test-bpc-org']);
+        done();
+      })
+      .catch(errorHandler.bind(this, done));
+    });
+  });
+
+
+  function errorHandler(done, err) {
+    expect(err.message).toBe('');
+    done(false);
+  }
 
 });
