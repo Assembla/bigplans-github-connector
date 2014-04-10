@@ -1,0 +1,13 @@
+{
+  "auth": {
+    "accessToken": "text",
+    "userName": "text"
+  },
+  "container": {
+    "urlName": "text",
+    "userName": "text",
+    "urlPattern": "https://github.com/%userName/%urlName"
+  },
+  "importGoalsInfo": "We’ll import open goals.",
+  "userInvitationInfo": "We’ll invite users from an organisation that have an email published on their Github account."
+}

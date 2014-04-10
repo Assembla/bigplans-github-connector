@@ -1,0 +1,26 @@
+{
+  "auth": {
+    "userName":     "test-bpc",
+    "urlName":      "repo1",
+    "accessToken":  "08e4314357fa1ce5ca492d02ddd2649b5b1af452"
+  },
+
+  "createGoal": {
+    "goal": {
+      "title": "test-goal",
+      "description": "some text description here"
+    }
+  },
+
+  "updateGoal": {
+    "goal": { "title": "updated-test-goal" }
+  },
+
+  "getGoal": {},
+
+  "getGoals": {},
+
+  "getUsers": {},
+
+  "getProjects": {}
+}
