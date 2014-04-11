@@ -16,7 +16,7 @@ describe('connector smoke suite', function() {
     connService.testAction('createGoal', params, function(response) {
       helper.expectingAGoal(response);
 
-      var goal = response.data;
+      var goal = response.data.goal;
       var expectedGoal = settings.createGoal.goal;
 
       expect(goal.title).toEqual(expectedGoal.title);
@@ -36,7 +36,7 @@ describe('connector smoke suite', function() {
     connService.testAction('updateGoal', params, function(response) {
       helper.expectingAGoal(response);
 
-      var goal = response.data;
+      var goal = response.data.goal;
       var expectedGoal = settings.updateGoal.goal;
 
       expect(goal.title).toEqual(expectedGoal.title);

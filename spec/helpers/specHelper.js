@@ -14,7 +14,7 @@ function expectingSuccess(response) {
 
 function expectingAUserList(response) {
   expectingSuccess(response);
-  var data = response.data;
+  var data = response.data.users;
 
   expect(data).toEqual(jasmine.any(Array));
 
@@ -27,7 +27,7 @@ function expectingAUserList(response) {
 
 function expectingAProjectList(response) {
   expectingSuccess(response);
-  var data = response.data;
+  var data = response.data.projects;
 
   expect(data).toBeDefined();
   var project = data[0];
@@ -49,14 +49,14 @@ function expectingAGoalObject(obj) {
 
 function expectingAGoal(response) {
   expectingSuccess(response);
-  var data = response.data;
+  var data = response.data.goal;
 
   expectingAGoalObject(data);
 }
 
 function expectingAGoalList(response) {
   expectingSuccess(response);
-  var data = response.data;
+  var data = response.data.goals;
 
   expect(data).toEqual(jasmine.any(Array));
 
