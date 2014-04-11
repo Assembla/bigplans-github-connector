@@ -64,27 +64,21 @@ describe('Translator', function() {
 
   describe('#toGoal', function() {
     var ghIssue;
-    var reqParams;
 
     beforeEach(function() {
       ghIssue = {
-        title: 'issue name',
-        body: 'some text',
         number: 5,
-        state: 'open'
-      };
-
-      reqParams = {
-        userName: 'qwerty',
-        urlName:  'qwerty-repo'
+        title:    'issue name',
+        body:     'some text',
+        state:    'open',
+        html_url: 'some-issue-url'
       };
     });
 
     it('translates issue fields', function() {
-      var result = translator.toGoal(ghIssue, reqParams);
+      var result = translator.toGoal(ghIssue);
 
-      var link = 'https://github.com/qwerty/qwerty-repo/issues/' + ghIssue.number;
-      expect(result.link)       .toEqual(link);
+      expect(result.link)       .toEqual(ghIssue.html_url);
       expect(result.title)      .toEqual(ghIssue.title);
       expect(result.description).toEqual(ghIssue.body);
       expect(result.external_id).toEqual(ghIssue.number);
@@ -92,14 +86,14 @@ describe('Translator', function() {
 
     describe('status changes', function() {
       it('assigns status open', function() {
-        var result = translator.toGoal(ghIssue, reqParams);
+        var result = translator.toGoal(ghIssue);
 
         expect(result.status).toEqual(0);
       });
 
       it('assigns status closed', function() {
         ghIssue.state = 'closed';
-        var result = translator.toGoal(ghIssue, reqParams);
+        var result = translator.toGoal(ghIssue);
 
         expect(result.status).toEqual(2);
       });

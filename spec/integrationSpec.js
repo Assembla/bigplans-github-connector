@@ -39,7 +39,8 @@ describe('connector smoke suite', function() {
       var goal = response.data.goal;
       var expectedGoal = settings.updateGoal.goal;
 
-      expect(goal.title).toEqual(expectedGoal.title);
+      expect(goal.title)      .toEqual(expectedGoal.title);
+      expect(goal.description).toEqual(expectedGoal.description);
 
       done();
     });
