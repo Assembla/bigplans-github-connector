@@ -44,6 +44,7 @@ function expectingAGoalObject(obj) {
   expect(obj.description).toBeDefined();
   expect(obj.external_id).toMatch(/[0-9]+/);
   expect(obj.status).toMatch(/[0-2]/);
+  expect(obj.link).toBeDefined();
 }
 
 
