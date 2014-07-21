@@ -18,11 +18,14 @@ describe('Translator', function() {
       var githubRepo = {
         name: 'repo-one',
         full_name: 'Repo One',
-        git_clone_url: 'git@github.com/'
+        git_clone_url: 'git@github.com/',
+        owner: {
+          login: 'user name'
+        }
       };
 
       var result = translator.toProject(githubRepo);
-      expect(result).toEqual({ name: 'Repo One', urlName: 'repo-one' });
+      expect(result).toEqual({ name: 'Repo One', urlName: 'repo-one', userName: 'user name' });
     });
   });
 
